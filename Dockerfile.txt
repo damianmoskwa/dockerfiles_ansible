@@ -1,0 +1,11 @@
+FROM ubuntu:latest
+
+RUN apt-get update -y && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends &&\
+	install software-properties-common
+
+RUN apt-add-repository ppa:ansible/ansible
+RUN apt-get update && \
+	apt-get install ansible
+	
+   
